@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0a0a0b">
+<title>Prakhar Patel — 500/500</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap');
+:root{--bg:#090a0c;--panel:#111317;--panel2:#17191e;--ink:#f4f0e9;--muted:#9699a1;--red:#e14a3b;--line:#292c32;--gold:#c9a979}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.14;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E");z-index:5}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+.wrap{width:min(1160px,92vw);margin:auto}
+nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+.logo{font-family:'Playfair Display',serif;font-weight:700;letter-spacing:.06em;font-size:20px}
+.logo span{color:var(--red)}
+.navright{display:flex;gap:24px;align-items:center;color:var(--muted);font:11px 'DM Mono',monospace;letter-spacing:.12em;text-transform:uppercase}
+.navright a:hover{color:white}
+.pill{border:1px solid #49413b;border-radius:100px;padding:9px 13px;color:#e8d7c2}
+.hero{padding:76px 0 58px;text-align:center;position:relative}
+.kicker{font:11px 'DM Mono',monospace;color:var(--gold);letter-spacing:.28em;text-transform:uppercase}
+.hero h1{font:600 clamp(64px,13vw,150px)/.9 'Playfair Display',serif;letter-spacing:-.065em;margin:24px 0 10px}
+.hero h1 span{color:var(--red)}
+.hero-sub{font:italic clamp(17px,2.3vw,23px) 'Playfair Display',serif;color:#c9c4bc}
+.hero-note{margin:22px auto 0;color:var(--muted);font-size:13px;max-width:510px;line-height:1.7}
+.hero-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:28px}
+.btn{border:1px solid var(--line);background:transparent;color:var(--ink);padding:12px 17px;border-radius:4px;font-size:12px;letter-spacing:.05em;cursor:pointer;transition:.2s}
+.btn.primary{background:var(--red);border-color:var(--red);color:white}
+.btn:hover{transform:translateY(-2px);border-color:#777}
+.ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px 0;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#777d87;font:10px 'DM Mono',monospace;letter-spacing:.14em;text-transform:uppercase}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin:58px 0 20px}
+.section-head h2{font:600 clamp(26px,4vw,38px) 'Playfair Display',serif;margin:0}
+.section-head p{margin:0;color:var(--muted);font-size:12px}
+.gallery{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}
+.paper{background:var(--panel);border:1px solid var(--line);border-radius:7px;overflow:hidden;position:relative}
+.paper img{display:block;width:100%;height:auto;cursor:zoom-in;transition:transform .5s}
+.paper:hover img{transform:scale(1.012)}
+.paper-foot{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;color:var(--muted);font:10px 'DM Mono',monospace;letter-spacing:.12em;text-transform:uppercase}
+.paper-foot strong{color:var(--ink);font:600 14px 'Playfair Display',serif;letter-spacing:0;text-transform:none}
+.player-section{margin:60px 0 0}
+.player{display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center;padding:24px;background:linear-gradient(135deg,#191b20,#101114);border:1px solid #33363d;border-radius:8px}
+.player-title{display:flex;align-items:center;gap:15px}
+.vinyl{width:56px;height:56px;border-radius:50%;flex:none;background:repeating-radial-gradient(circle at center,#202126 0 3px,#363941 4px 5px,#17191d 6px 8px);border:1px solid #575b63;position:relative;animation:spin 7s linear infinite;animation-play-state:paused}
+.vinyl:after{content:"";position:absolute;width:12px;height:12px;border-radius:50%;background:var(--red);left:50%;top:50%;transform:translate(-50%,-50%);border:2px solid #e7c7a4}
+.player.playing .vinyl{animation-play-state:running}
+@keyframes spin{to{transform:rotate(360deg)}}
+.player-title h3{font:600 20px 'Playfair Display',serif;margin:0 0 4px}
+.player-title p{font-size:12px;color:var(--muted);margin:0}
+.player-controls{display:flex;align-items:center;gap:10px}
+.play{width:42px;height:42px;border:0;border-radius:50%;background:var(--red);color:white;cursor:pointer;font-size:15px}
+.trackline{grid-column:1/-1;display:grid;grid-template-columns:42px 1fr 42px;align-items:center;gap:12px;color:var(--muted);font:10px 'DM Mono',monospace}
+input[type=range]{width:100%;accent-color:var(--red);cursor:pointer}
+.fileline{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:15px;color:var(--muted);font-size:11px}
+.fileline input{max-width:240px;font-size:11px}
+.quote{margin:56px 0 0;padding:30px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center}
+.quote blockquote{margin:0;font:italic clamp(22px,4vw,35px) 'Playfair Display',serif;line-height:1.3}
+.quote small{display:block;margin-top:14px;color:var(--gold);font:10px 'DM Mono',monospace;letter-spacing:.16em;text-transform:uppercase}
+footer{padding:32px 0 42px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#737781;font:10px 'DM Mono',monospace;letter-spacing:.12em;text-transform:uppercase}
+.modal{position:fixed;inset:0;background:#000e;display:none;align-items:center;justify-content:center;padding:24px;z-index:10}
+.modal.open{display:flex}
+.modal img{max-width:min(1100px,95vw);max-height:88vh;object-fit:contain;box-shadow:0 20px 80px #000}
+.close{position:absolute;right:24px;top:20px;border:1px solid #555;background:#171717;color:white;border-radius:50%;width:40px;height:40px;cursor:pointer}
+@media(max-width:760px){.gallery{grid-template-columns:1fr}.hero{padding:60px 0 42px}.player{grid-template-columns:1fr}.player-controls{justify-content:flex-start}.navright a:not(.pill){display:none}.section-head{align-items:start;flex-direction:column}.paper:first-child{order:1}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav>
+  <a class="logo" href="#">PRAKHAR<span>.</span></a>
+  <div class="navright"><a href="#newspapers">The editions</a><a href="#soundtrack">Soundtrack</a><span class="pill">Class of 2027</span></div>
+</nav>
+<header class="hero">
+  <div class="kicker">A vision worth working for</div>
+  <h1>500<span>/</span>500</h1>
+  <div class="hero-sub">The headline is imagined. The effort is real.</div>
+  <p class="hero-note">A reminder of the goal, the people who believe in you, and the work that happens when nobody is watching.</p>
+  <div class="hero-actions">
+    <a class="btn primary" href="#newspapers">View the headlines ↘</a>
+    <a class="btn" href="#soundtrack">Play the soundtrack</a>
+  </div>
+</header>
+<div class="ticker"><span>Focus over comparison</span><span>Consistency over intensity</span><span>One paper at a time</span></div>
+
+<section id="newspapers">
+  <div class="section-head"><h2>The front pages</h2><p>Two versions of the same dream · Tap to enlarge</p></div>
+  <div class="gallery">
+    <article class="paper">
+      <img class="zoomable" src="assets/newspaper-with-photo.png" alt="Imagined newspaper front page with Prakhar Patel's portrait and 500 out of 500 headline">
+      <div class="paper-foot"><strong>The full story</strong><span>Edition No. 01</span></div>
+    </article>
+    <article class="paper">
+      <img class="zoomable" src="assets/newspaper-minimal.png" alt="Minimal imagined newspaper wallpaper with 500 out of 500 headline">
+      <div class="paper-foot"><strong>The minimalist edition</strong><span>Edition No. 02</span></div>
+    </article>
+  </div>
+</section>
+
+<section class="player-section" id="soundtrack">
+  <div class="section-head"><h2>Your soundtrack</h2><p>Pick a song stored on your device</p></div>
+  <div class="player" id="player">
+    <div class="player-title"><div class="vinyl"></div><div><h3 id="song">The focus session</h3><p id="status">No track selected yet</p></div></div>
+    <div class="player-controls"><button class="play" id="toggle" aria-label="Play">▶</button></div>
+    <div class="trackline"><span id="elapsed">0:00</span><input id="seek" type="range" min="0" max="100" value="0" aria-label="Track progress"><span id="total">0:00</span></div>
+    <div class="fileline"><label for="audioFile">Choose your music</label><input id="audioFile" type="file" accept="audio/*"><span>Local playback · Nothing is uploaded</span></div>
+  </div>
+  <audio id="audio"></audio>
+</section>
+
+<section class="quote">
+  <blockquote>“Let the result be a reflection of the work,<br>not a reaction to anyone else.”</blockquote>
+  <small>Keep going · Prakhar Patel</small>
+</section>
+<footer><span>Prakhar Patel · 500/500 vision</span><span>Dream it. Prepare for it. Earn it.</span></footer>
+</div>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Newspaper preview"><button class="close" id="close" aria-label="Close preview">✕</button><img id="modalImg" alt="Expanded newspaper preview"></div>
+<script>
+const audio=document.getElementById('audio'), toggle=document.getElementById('toggle'), file=document.getElementById('audioFile');
+const seek=document.getElementById('seek'), elapsed=document.getElementById('elapsed'), total=document.getElementById('total');
+const player=document.getElementById('player'), song=document.getElementById('song'), status=document.getElementById('status');
+let objectUrl=null;
+const fmt=t=>Number.isFinite(t)?`${Math.floor(t/60)}:${String(Math.floor(t%60)).padStart(2,'0')}`:'0:00';
+file.addEventListener('change',()=>{const f=file.files?.[0];if(!f)return;if(objectUrl)URL.revokeObjectURL(objectUrl);objectUrl=URL.createObjectURL(f);audio.src=objectUrl;song.textContent=f.name.replace(/\.[^.]+$/,'');status.textContent='Ready to play · Your device';audio.load();});
+toggle.addEventListener('click',async()=>{if(!audio.src){file.click();return;}if(audio.paused){try{await audio.play();}catch(e){status.textContent='Could not play this audio file';}}else audio.pause();});
+audio.addEventListener('play',()=>{toggle.textContent='Ⅱ';toggle.setAttribute('aria-label','Pause');player.classList.add('playing');status.textContent='Now playing';});
+audio.addEventListener('pause',()=>{toggle.textContent='▶';toggle.setAttribute('aria-label','Play');player.classList.remove('playing');if(audio.currentTime>0)status.textContent='Paused';});
+audio.addEventListener('loadedmetadata',()=>total.textContent=fmt(audio.duration));
+audio.addEventListener('timeupdate',()=>{elapsed.textContent=fmt(audio.currentTime);if(audio.duration)seek.value=audio.currentTime/audio.duration*100;});
+seek.addEventListener('input',()=>{if(audio.duration)audio.currentTime=seek.value/100*audio.duration;});
+audio.addEventListener('ended',()=>{toggle.textContent='▶';player.classList.remove('playing');status.textContent='Track finished';});
+const modal=document.getElementById('modal'), modalImg=document.getElementById('modalImg');
+document.querySelectorAll('.zoomable').forEach(img=>img.addEventListener('click',()=>{modalImg.src=img.src;modal.classList.add('open');}));
+document.getElementById('close').addEventListener('click',()=>modal.classList.remove('open'));
+modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open');});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')modal.classList.remove('open');});
+</script>
+</body>
+</html>
